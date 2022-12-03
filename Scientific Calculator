@@ -1,0 +1,67 @@
+[14:54, 03/12/2022] Jithendra(Lpu): cakeangle=eval(input("Enter the Angle of the Cake: "))
+N=eval(input("Enter N: "))
+if(cakeangle%N==0):
+    print("YES the cake will cut in equal pieces of size %d"%N)
+else:
+    print("NO the cake will not cut in equal pieces of size %d"%N)
+if(N>cakeangle): #Only when N is greater tha cake angle cake can't be cut into pieces
+    print("NO the cake will not cut in any piece of size %d"%N)
+else:
+    print("YES the cake will cut in any piece of size %d"%N)
+n=1 # start subratcrting the cake
+for i in range(N):
+    cakeangle-=n
+    n+=1
+    if(cakeangle<0):
+        print("NO the cake will not cut into %d pieces such that no two of them are equal"%N)
+        break
+else:
+        print("YES the cake will cut into %d pieces such that no two of them are equal"%N)
+[14:54, 03/12/2022] Jithendra(Lpu): def add(x, y):
+    return x + y
+
+# This function subtracts two numbers
+def subtract(x, y):
+    return x - y
+
+# This function multiplies two numbers
+def multiply(x, y):
+    return x * y
+
+# This function divides two numbers
+def divide(x, y):
+    return x / y
+
+
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+
+while True:
+    # take input from the user
+    choice = input("Enter choice(1/2/3/4): ")
+
+    # check if choice is one of the four options
+    if choice in ('1', '2', '3', '4'):
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+
+        if choice == '1':
+            print(num1, "+", num2, "=", add(num1, num2))
+
+        elif choice == '2':
+            …
+[14:54, 03/12/2022] Jithendra(Lpu): def findAngle(h,m):
+    h = h % 12
+    h1 = (h * 360) // 12 + (m * 360) // (12 * 60)
+    m1 = (m * 360) // (60)
+    angle = abs(h1 - m1)
+    if angle > 180:
+        angle = 360 - angle
+    return angle
+
+h = int(input("hour:"))
+m = int(input("minute:"))
+print("Angle between two hands is %d degrees"%findAngle(h,m))
